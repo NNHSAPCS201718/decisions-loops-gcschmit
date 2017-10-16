@@ -143,6 +143,41 @@ public class Notes
         {
             System.out.println( "Strings are equal." );
         }
+        else
+        {
+            System.out.println( "Strings are not equal." );
+        }
+        
+        /*
+         * We will determine which string comes first lexographically
+         *      using the compareTo method of the String class.
+         *      
+         *  compareTo returns an int:
+         *      0:      if the strings are equal (same sequence of characters)
+         *      < 0:    if str1 < str2 lexographically
+         *      > 0:    if str1 > str2 lexographically
+         */
+        int result = str1.compareTo( str2 );
+        String firstStr = null;
+        
+        if( result < 0 )
+        {
+            firstStr = str1;
+        }
+        else if( result > 0 )
+        {
+            firstStr = str2;
+        }
+        
+        if( firstStr != null )
+        {
+            System.out.println( "The first string is: " + firstStr );
+            System.out.println( "Its length is: " + firstStr.length());
+        }
+        else
+        {
+            System.out.println( "The strings are equal." );
+        }
     }
 }
 
