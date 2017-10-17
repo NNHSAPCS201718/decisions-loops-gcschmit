@@ -178,6 +178,32 @@ public class Notes
         {
             System.out.println( "The strings are equal." );
         }
+        
+        /*
+         * This is an example of a "short circuit".
+         *      If the left operand is false, the right operand will
+         *      not be evaluated because the AND operation is already false.
+         */
+        if( firstStr != null && firstStr.length() > 3 )
+        {
+            System.out.println( "The first string has more than 3 characters." );
+        }
+        
+        /*
+         * This is another "short circuit" example.
+         *      If the left operand is true, the right operand will
+         *      not be evaluated because the OR operation is already true.
+         *      
+         *  This may result in a bug, if the first word entered is "kiwi",
+         *      we will never read the second word from the terminal which
+         *      may result in unexpected behavior later.
+         *      
+         */
+        System.out.println( "Enter your two favorite fruits." );
+        if( s.next().equals( "kiwi" ) || s.next().equals( "kiwi" ))
+        {
+            System.out.println( "kiwi is one of my favorite fruits too!" );
+        }
     }
 }
 
