@@ -178,8 +178,145 @@ public class Notes
         {
             System.out.println( "Strings are equal." );
         }
+        
+        /*
+         * This is an example of a "short circuit".
+         *      If the left operand is false, the right operand will
+         *      not be evaluated because the AND operation is already
+         *      determined to be false.
+         */
+        if( firstStr != null && firstStr.length() > 3 )
+        {
+            System.out.println( "The first string has more than 3 characters." );
+        }
+        
+        /*
+         * This is another "short circuit" example.
+         *      If the left operand is true, the right operand will
+         *      not be evaluated because the OR operation is already
+         *      determined to be true.
+         *  
+         *  This may result in a bug, if the first word entered is "kiwi",
+         *      we will never read the second word from the terminal which
+         *      may result in unexpected behavior later.
+         */
+        System.out.print( "Enter your two favorite fruits." );
+        if( s.next().equals( "kiwi" ) || s.next().equals( "kiwi" ))
+        {
+            System.out.println( "Kiwi is one of my favorite fruits too!" );
+        }
+        
+        System.out.print( "Enter your favorite ice cream flavor." );
+        // may read the second fruit instead of the ice cream falvor!
+        String flavor = s.next();
+        System.out.println( "Favorite flavor: " + flavor ); 
+    }
+    
+    public static String getStudentClass( int gradeNumber )
+    {
+        /*
+         * switch statement
+         *      another condityional decision statement (like if statement)
+         *      preferred when evaluating several *discrete* values
+         *      can only be used for byte, short, char, and int primitive types
+         *      can also be used for enumerations and String objects
+         *  the condition is evaluated, flow of execution jumps to the
+         *      case that matches
+         */
+        String studentClass = "";
+        
+        switch( gradeNumber )
+        {
+            case 9:
+            {
+                studentClass = "freshman";
+                
+                /*
+                 * break causes the flow of execution to leave the switch
+                 * 
+                 *  (without a break, the flow of execution continues
+                 *      into the next case)
+                 */
+                break;
+            }
+            
+            case 10:
+            {
+                studentClass = "sophomore";
+                break;
+            }
+            
+            case 11:
+            {
+                studentClass = "junior";
+                break;
+            }
+            
+            case 12:
+            {
+                studentClass = "senior";
+                break;
+            }
+            
+            /*
+             * by leaving out the break, multiple cases can run the
+             *      same code
+             */
+            case 6:
+            case 7:
+            case 8:
+            {
+                studentClass = "junior high";
+                break;
+            }
+            
+            /*
+             * default matches everything not matched by one of the cases
+             */
+            default:
+            {
+                studentClass = "elementary";
+                break;
+            }
+        }
+        
+        return studentClass;
+    }
+    
+    public static void incrementExample()
+    {
+        /*
+         * post increment/decrement operator
+         *      equivalent to adding/subtracting 1
+         *      returns the value before performing the increment/decrement
+         */
+        int x = 3;
+        x++;    // x is now 4; this is equivalent to x += 1
+        
+        int a = 7;
+        int b = a++;
+        System.out.println( "a = " + a + "; b = " + b ); // a = 8; b = 7
+        
+        /*
+         * pre increment/decrement operator
+         *      returns the value after performing the increment/decrement
+         */
+        int c = 7;
+        int d = ++c;
+        System.out.println( "c = " + c + "; d = " + d ); // c = 8; d = 8
+        
+        /*
+         * assignment operators: +=, -=, *=, /=, %=
+         *      same as in Python
+         *      performs the specified operation and then assigns the
+         *          resulting value
+         */
     }
 }
+
+
+
+
 
 
 
