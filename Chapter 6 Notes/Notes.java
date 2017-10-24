@@ -1,0 +1,101 @@
+
+/**
+ * Write a description of class Notes here.
+ *
+ * @author gcschmit
+ * @version 24 October 2017
+ */
+public class Notes
+{
+    public static void whileExample()
+    {
+        /*
+         * while loop:
+         *      evaluates a boolean condition
+         *      if true, executes the body and then re-evaluates the condition
+         *      if false, skips the body and continues
+         */
+        int count = 1;      // initialization
+        
+        while( count <= 5 )     // condition
+        {
+            System.out.println( count );    // body
+            
+            count++;        // changes the conditional variable
+        }
+        
+        System.out.println( "done" );
+    }
+    
+    public static void whileExample2()
+    {
+        /*
+         * This is an example of an infinite loop
+         * 
+         *  A better approach would be:
+         *      while( count < 50 )
+         */
+        int count = 1;      // initialization
+        
+        while( count != 50 )    // condition
+        {
+            System.out.println( count );    // body
+            
+            count += 2;     // update the conditional variable
+        }
+        
+        System.out.println( "done" );
+    }
+    
+    public static void forExample()
+    {
+        /*
+         * for loop:
+         *  three parts of the for loop statement:
+         *      1. initialization - executed once
+         *      2. boolean condition - tested at the start of each iteration
+         *      3. update the conditional variable - executed at the *end*
+         *          of each iteration *before* testing the condition again
+         */
+        for( int count = 1;     // initialization
+                count <= 5;     // boolean condition
+                count++ )       // update the conditional variable
+        {
+            System.out.println( count );
+        }
+        
+        System.out.println( "done" );
+        
+        /*
+         * variables declared within the for statement are scoped to the
+         *      for statement and its body
+         */
+        //System.out.println( "final value of count: " + count );
+    }
+    
+    public static void doExample()
+    {
+        /*
+         * do loop (do-while loop):
+         *      1. executes the body of the loop
+         *      2. evaluates the boolean condition
+         *          if true, executes the body of the loop again
+         *          if false, continues execution after the loop
+         */
+        int count = 1;                      // initialization
+        
+        do
+        {
+            System.out.println( count );    // body
+            
+            count++;                        // update the condition variable
+        }
+        while( count <= 5 );                // condition
+        
+        System.out.println( "done" );
+    }
+}
+
+
+
+
