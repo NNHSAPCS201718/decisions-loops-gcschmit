@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 
 /**
  * Write a description of class Notes here.
@@ -95,6 +97,104 @@ public class Notes
         
         System.out.println( "done" );
     }
+    
+    public static void sum()
+    {
+        Scanner s = new Scanner( System.in );
+        
+        int sum = 0;
+        int value;
+        
+        do
+        {
+            System.out.print( "enter a positive integer (-1 to quit): " );
+            /*
+             * Sentinel value
+             *      value (e.g., -1) used to terminate a loop
+             *      it is often entered by a user
+             */
+            value = s.nextInt();
+            
+            sum += value;   // this is a bug! sum is 1 less than it should be
+        }
+        while( value != -1 );
+        
+        System.out.println( "sum: " + sum );
+    }
+    
+    public static void sum2()
+    {
+        Scanner s = new Scanner( System.in );
+        
+        int sum = 0;
+        int value;
+        
+        do
+        {
+            System.out.print( "enter a positive integer (-1 to quit): " );
+            value = s.nextInt();
+            
+            if( value == -1 )
+            {
+                /*
+                 * break: exits the inner-most loop it is in
+                 *  (similiar behavior as used in switch statement)
+                 */
+                break;
+            }
+            
+            sum += value;
+        }
+        while( value != -1 );
+        
+        System.out.println( "sum: " + sum );
+    }
+    
+    public static void sum3()
+    {
+        Scanner s = new Scanner( System.in );
+        
+        int sum = 0;
+        int value = 0;
+        
+        do
+        {
+            System.out.print( "enter a positive integer (-1 to quit): " );
+            
+            /*
+             * The hasNextInt method of the Scanner class returns true
+             *      if the next token to be read is an integer; otherwise,
+             *      it returns false. It does not read the next token.
+             */
+            if( s.hasNextInt() == false )
+            {
+                s.next(); // read the unexpected token
+                
+                /*
+                 * continue:
+                 *      1. skips to the end of the inner-most loop it is in
+                 *      2. re-evaluates the loop condition at that point
+                 *  
+                 *  "we are done with this iteration, go to the next one"
+                 */
+                continue;
+            }
+            
+            value = s.nextInt();
+            
+            if( value == -1 )
+            {
+                break;
+            }
+            
+            sum += value;
+        }
+        while( value != -1 );
+        
+        System.out.println( "sum: " + sum );
+    }
+    
+    
 
 }
 
