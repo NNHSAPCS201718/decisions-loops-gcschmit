@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class CommonLoopAlgorithms
 {
     /*
@@ -120,15 +121,15 @@ public class CommonLoopAlgorithms
         int value, max;
         max = Integer.MIN_VALUE;
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
         do
         {
-            System.out.print("Enter a number: ");
             value = scanner.nextInt();
             if (value > max)
             {
                 max = value; 
             }
-
+            System.out.print("Enter a number: ");
         }
         while(scanner.hasNextInt() == true);
         return max;
