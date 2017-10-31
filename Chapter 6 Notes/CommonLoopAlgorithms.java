@@ -111,6 +111,9 @@ public class CommonLoopAlgorithms
             if (scanner.hasNextInt()){
                 check = scanner.nextInt();
             }
+            else{
+                scanner.next();
+            }
         }
         while(check >= 100);
         return check;
@@ -161,6 +164,7 @@ public class CommonLoopAlgorithms
         int value = 0;
         int previous = 0;
         System.out.print("enter a series of integers (letter to quit): ");
+        previous = s.nextInt();
         do
         {
             value = s.nextInt();
