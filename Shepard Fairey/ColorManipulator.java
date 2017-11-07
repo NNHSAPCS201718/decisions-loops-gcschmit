@@ -69,6 +69,7 @@ public class ColorManipulator
 
     public static void main(String args[])
     {
+        // the selfie image must be in the Shepard Fairey folder
         Picture picture= new Picture( "selfie.jpg" );
         ColorManipulator manipulator = new ColorManipulator( picture );
         picture.explore();

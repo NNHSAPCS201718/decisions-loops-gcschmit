@@ -49,7 +49,7 @@ public class ShepardFairey
          * You may need to specify an absolute path. For example:
          *  finalPic.write("C:\\Users\\gschmit\\Desktop\\GitHub\\unit6MediaComp\\images\\Schmit.jpg");
          */
-        selfie.write( "/Users/geoff/newSelfie.jpg" );
+        selfie.write( "newSelfie.jpg" );
 
         // display the transformed selfie picture
         selfie.explore();
